@@ -68,3 +68,4 @@ btnSearch.addEventListener('click', async () => {
 //         // Aqui você pode chamar as funções para buscar os dados do usuário
 //     }
 // });
+ 
