@@ -44,6 +44,17 @@ btnSearch.addEventListener('click', async () => {
                 <p>${user_profile.bio || "Biografia não disponível"}</p>
             </div>
             
+        </div>
+
+        <div class="profile-counters">
+            <div class="🙍followers">
+                <h4>Seguidores</h4>
+                <span>${user_profile.followers}</span>
+            </div>
+            <div class="🤵following">
+                <h4>Seguindo</h4>
+                <span>${user_profile.following}</span>
+            </div>
         </div>`;
         
     }catch(error) {

@@ -169,6 +169,28 @@ main {
   box-shadow: var(--shadow-md);
 }
 
+.profile-counters {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 3.5rem 0;
+}
+
+.profile-counters h4 {
+  font-weight: normal;
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+
+}
+
+.profile-counters span {
+  font-size: 1.9rem;
+  font-weight: bold;
+
+}
+
+
 .profile-info {
 }
 
