@@ -212,3 +212,61 @@ main {
     color: var(--primary);
     margin: var(--spacing-xl) 0;
 }
+
+.repositories {
+  width: 100%;
+  margin-top: var(--spacing-xl);
+  text-align: left;
+}
+
+.repositories h3 {
+  font-size: var(--font-lg);
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.repositories ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.repositories ul li a {
+  display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: var(--shadow-sm);
+}
+
+.repositories ul li a h4 {
+  font-size: var(--font-sm);
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+  overflow-wrap: anywhere;
+}
+
+.repositories ul li a p {
+  flex: 1;
+  font-size: var(--font-xs);
+  color: var(--muted-foreground);
+  line-height: 1.4;
+}
+
+.repository-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.repository-info span,
+.repositories-empty {
+  font-size: var(--font-xs);
+  color: var(--muted-foreground);
+}

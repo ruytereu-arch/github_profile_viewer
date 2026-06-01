@@ -1,6 +1,6 @@
 const screen = {
     userProfile: document.querySelector('.profile-results'),
-    renderUser(user) {
+    renderUser(user, repositories = []) {
         this.userProfile.innerHTML = `
             <div class="profile-card">
                 <img src="${user.avatar_url}" alt="avatar de ${user.name}"
@@ -21,6 +21,34 @@ const screen = {
                     <h4>Seguindo</h4>
                     <span>${user.following}</span>
                 </div>
+            </div>
+
+            ${this.renderRepositories(repositories)}`;
+    },
+    renderRepositories(repositories) {
+        const repositoriesList = Array.isArray(repositories) ? repositories : [];
+
+        if (repositoriesList.length === 0) {
+            return `<p class="repositories-empty">Este usuário não possui repositórios públicos.</p>`;
+        }
+
+        const repositoriesItems = repositoriesList.map(repo => `
+            <li>
+                <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                    <h4>${repo.name}</h4>
+                    <p>${repo.description ?? 'Sem descrição cadastrada.'}</p>
+                    <div class="repository-info">
+                        <span>${repo.language ?? 'Sem linguagem'}</span>
+                        <span>⭐ ${repo.stargazers_count}</span>
+                        <span>Forks: ${repo.forks_count}</span>
+                    </div>
+                </a>
+            </li>`).join('');
+
+        return `
+            <div class="repositories">
+                <h3>Repositórios</h3>
+                <ul>${repositoriesItems}</ul>
             </div>`;
     },
     renderNotFound(userName) {

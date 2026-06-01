@@ -1,4 +1,4 @@
-import { getUser } from './services/user.js';
+import { getRepos, getUser } from './services/user.js';
 import { screen } from './objects/screen.js';
 
 document.getElementById('btn-search').addEventListener('click', () => {
@@ -27,12 +27,15 @@ function validateEmptyInput(userName) {
 
 async function getUserData(userName) {
     screen.userProfile.innerHTML = `<p class="loading">Carregando...</p>`;
-    const userResponse = await getUser(userName);
+    const [userResponse, reposResponse] = await Promise.all([
+        getUser(userName),
+        getRepos(userName)
+    ]);
 
     if (userResponse.message === "Not Found") {
         screen.renderNotFound(userName);
         return;
     }
 
-    screen.renderUser(userResponse);
+    screen.renderUser(userResponse, reposResponse);
 }
