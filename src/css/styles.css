@@ -220,53 +220,63 @@ main {
 }
 
 .repositories h3 {
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
   color: var(--primary);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
   text-align: center;
 }
 
 .repositories ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-md);
+  gap: var(--spacing-xl);
 }
 
 .repositories ul li a {
   display: flex;
   flex-direction: column;
-  min-height: 10rem;
-  padding: var(--spacing-md);
+  min-height: 14rem;
+  padding: var(--spacing-lg);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) - 2px);
   background: var(--card);
   color: var(--foreground);
   box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.repositories ul li a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .repositories ul li a h4 {
+  min-height: 2.5rem;
   font-size: var(--font-sm);
+  font-weight: 700;
   color: var(--primary);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
   overflow-wrap: anywhere;
-}
-
-.repositories ul li a p {
-  flex: 1;
-  font-size: var(--font-xs);
-  color: var(--muted-foreground);
-  line-height: 1.4;
 }
 
 .repository-info {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-sm);
 }
 
-.repository-info span,
-.repositories-empty {
+.repository-info span {
+  display: block;
+  width: 100%;
+  padding: 0.45rem var(--spacing-xs);
+  border-radius: calc(var(--radius) - 4px);
+  background: #eeeeee;
   font-size: var(--font-xs);
   color: var(--muted-foreground);
+}
+
+.repositories-empty {
+  font-size: var(--font-sm);
+  color: var(--muted-foreground);
+  text-align: center;
 }

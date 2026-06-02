@@ -36,11 +36,11 @@ const screen = {
             <li>
                 <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
                     <h4>${repo.name}</h4>
-                    <p>${repo.description ?? 'Sem descrição cadastrada.'}</p>
                     <div class="repository-info">
-                        <span>${repo.language ?? 'Sem linguagem'}</span>
-                        <span>⭐ ${repo.stargazers_count}</span>
-                        <span>Forks: ${repo.forks_count}</span>
+                        <span>⭐ Stars: ${repo.stargazers_count}</span>
+                        <span>🍴 Forks: ${repo.forks_count}</span>
+                        <span>👀 Watchers: ${repo.watchers_count}</span>
+                        <span>💻 Language: ${repo.language ?? 'Sem linguagem'}</span>
                     </div>
                 </a>
             </li>`).join('');
